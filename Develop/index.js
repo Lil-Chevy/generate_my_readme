@@ -1,8 +1,7 @@
 // TODO: Include packages needed for this application
-const { rejects } = require("assert");
 const fs = require("fs");
 const inquirer = require("inquirer");
-const { resolve } = require("path");
+
 // TODO: Create an array of questions for user input
 const questionPrompts = () => {
   const questions = [];
@@ -144,10 +143,10 @@ const questionPrompts = () => {
     });
 };
 
-// TODO: Create a function to write README file
+//function to write README file
 function writeToFile(fileName) {
   return new Promise((resolve, reject) => {
-    fs.writeFile("../Develop/README.md", fileName, (err) => {
+    fs.writeFile("./Develop/README.md", fileName, (err) => {
       if (err) {
         reject(err);
         return;
