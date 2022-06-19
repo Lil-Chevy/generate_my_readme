@@ -48,6 +48,32 @@ const questionPrompts = () => {
         when: ({ confirmInstallation }) => confirmInstallation,
       },
       {
+        type: "github",
+        name: "github",
+        message: "Please enter your GitHub Username.",
+        validate: (github) => {
+          if (github) {
+            return true;
+          } else {
+            console.log("Please enter your Username!");
+            return false;
+          }
+        },
+      },
+      {
+        type: "email",
+        name: "email",
+        message: "Please enter your Email for contact information",
+        validate: (email) => {
+          if (email) {
+            return true;
+          } else {
+            console.log("Please enter your email!");
+            return false;
+          }
+        },
+      },
+      {
         type: "usage",
         name: "usageInformation",
         message:
@@ -73,6 +99,19 @@ const questionPrompts = () => {
             return false;
           }
         },
+      },
+
+      {
+        type: "checkbox",
+        name: "license",
+        message: "What license would you like to add to the README file?",
+        choices: [
+          "MIT",
+          "GNU GPLv3",
+          "APACHE 2.0",
+          "Boost Software",
+          "Mozilla Public",
+        ],
       },
       {
         type: "contributors",
