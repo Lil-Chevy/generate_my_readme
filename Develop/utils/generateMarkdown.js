@@ -23,6 +23,8 @@ function renderLicenseBadge(license) {
     case "Mozilla Public":
       // link
       return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]";
+    case " ":
+      return " ";
   }
 }
 
@@ -50,6 +52,9 @@ function renderLicenseLink(license) {
     case "Mozilla Public":
       // link
       return "https://opensource.org/licenses/MPL-2.0";
+
+    case " ":
+      return " ";
   }
 }
 
@@ -60,7 +65,29 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  ## Purpose
 
+  ${descriptionInput}
+  ## Licensing
+
+  ${renderLicenseBadge}
+  ${license}
+
+  ## Questions
+
+  - GitHub Link: https://github.com/${github}
+
+  ## Test
+  - ${testInformation}
+
+  ## Contributors
+
+  - ${contributors}
+
+  ### Contact
+  
+  -please feel free to reach out to me!
+  -${email}
 `;
 }
 
