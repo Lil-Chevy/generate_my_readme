@@ -1,24 +1,19 @@
-# undefined
-  ## Purpose
+# Professional README Generator Starter Code
 
-  undefined
-  ## Licensing
+[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
 
-  undefined
-  MIT,GNU GPLv3,APACHE 2.0,Boost Software,Mozilla Public
+## Purpose
 
-  ## Questions
+After asking a list of questions and receiving, the application will produce a README.md file that is neat and consistent. This application can be used for many applications making a more clear repository.
 
-  - GitHub Link: https://github.com/lil-chevy verbale
+## Contributors
 
-  ## Test
-  - nope
+- Jack Nowaczewski
 
-  ## Contributors
+## GitHub Repo URL
 
-  - undefined
+https://github.com/Lil-Chevy/generate_my_readme
 
-  ### Contact
+## Deployed Application
 
-  -please feel free to reach out to me!
-  -nowaczewskij@get at it .com
+https://lil-chevy.github.io/generate_my_readme/
