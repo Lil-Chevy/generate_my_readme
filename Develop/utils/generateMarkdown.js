@@ -67,28 +67,28 @@ function generateMarkdown(data) {
   return `# ${data.title}
   ## Purpose
 
-  ${descriptionInput}
+  ${data.descriptionInput}
   ## Licensing
 
-  ${renderLicenseBadge}
-  ${license}
+  ${renderLicenseBadge(data.license)}
+  ${data.license}
 
   ## Questions
 
-  - GitHub Link: https://github.com/${github}
+  - GitHub Link: https://github.com/${data.github}
 
   ## Test
-  - ${testInformation}
+  - ${data.testInformation}
 
   ## Contributors
 
-  - ${contributors}
+  - ${data.contributors}
 
   ### Contact
-  
+
   -please feel free to reach out to me!
-  -${email}
+  -${data.email}
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = { renderLicenseBadge, renderLicenseLink, generateMarkdown };
