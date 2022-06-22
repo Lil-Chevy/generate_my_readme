@@ -12,7 +12,7 @@ const {
 const questions = [
   {
     type: "input",
-    name: " project name",
+    name: "title",
     message: "What is the name of your Project?(Required)",
     validate: (nameInput) => {
       if (nameInput) {
@@ -148,6 +148,7 @@ const questions = [
 function writeToFile(fileName) {
   return new Promise((resolve, reject) => {
     fs.writeFile("./utils/README.md", fileName, (err) => {
+      console.log("question array!", questions);
       if (err) {
         reject(err);
         return;
@@ -170,7 +171,6 @@ function init() {
 
 // Function call to initialize app
 init();
-
 // module.exports = { writeToFile };
 
 // changed location of questions array

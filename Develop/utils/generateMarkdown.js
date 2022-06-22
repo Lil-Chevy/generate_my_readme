@@ -67,7 +67,7 @@ function generateMarkdown(data) {
   return `# ${data.title}
   ## Purpose
 
-  ${data.descriptionInput}
+  ${data.description}
   ## Licensing
 
   ${renderLicenseBadge(data.license)}
@@ -82,7 +82,7 @@ function generateMarkdown(data) {
 
   ## Contributors
 
-  - ${data.contributors}
+  - ${data.contributorInformation}
 
   ### Contact
 
