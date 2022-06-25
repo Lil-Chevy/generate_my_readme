@@ -2,30 +2,11 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   // https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
-  switch (license) {
-    // "MIT",
-    case "MIT":
-      // link
-      return "![license](https://img.shields.io/badge/License-MIT-yellow.svg)";
-    // "GNU GPLv3",
-    case "GNU GPLv3":
-      // link
-      return "![License](https://img.shields.io/badge/License-GPLv3-blue.svg)";
-    // "APACHE 2.0",
-    case "APACHE 2.0":
-      // link
-      return "![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)";
-    // "Boost Software",
-    case "Boost Software":
-      // link
-      return "![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)";
-    // "Mozilla Public",
-    case "Mozilla Public":
-      // link
-      return "![License](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)";
-    case " ":
-      return " ";
-  }
+  const badgeUrl =
+    "![license](https://img.shields.io/badge/License-" +
+    `${license}` +
+    "-yellow.svg)";
+  return badgeUrl.replace(/ /g, "_");
 }
 
 // TODO: Create a function that returns the license link
@@ -39,7 +20,7 @@ function renderLicenseLink(license) {
     // "GNU GPLv3",
     case "GNU GPLv3":
       // link
-      return "https://www.gnu.org/licenses/gpl-3.0";
+      return "https://opensource.org/licenses/GPL-3.0";
     // "APACHE 2.0",
     case "APACHE 2.0":
       // link
@@ -47,7 +28,7 @@ function renderLicenseLink(license) {
     // "Boost Software",
     case "Boost Software":
       // link
-      return "https://www.boost.org/LICENSE_1_0.txt";
+      return "https://opensource.org/licenses/BSL-1.0";
     // "Mozilla Public",
     case "Mozilla Public":
       // link
@@ -65,8 +46,7 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   console.log("<<<<<<DATA>>>>", data);
-  console.log("data.license", data.license);
-  console.log("render license", renderLicenseBadge(data));
+  console.log("render license link", renderLicenseLink(data.license));
   return `# ${data.title}
   ## Purpose
 
