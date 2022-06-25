@@ -6,23 +6,23 @@ function renderLicenseBadge(license) {
     // "MIT",
     case "MIT":
       // link
-      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]";
+      return "![license](https://img.shields.io/badge/License-MIT-yellow.svg)";
     // "GNU GPLv3",
     case "GNU GPLv3":
       // link
-      return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]";
+      return "![License](https://img.shields.io/badge/License-GPLv3-blue.svg)";
     // "APACHE 2.0",
     case "APACHE 2.0":
       // link
-      return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]";
+      return "![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)";
     // "Boost Software",
     case "Boost Software":
       // link
-      return "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]";
+      return "![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)";
     // "Mozilla Public",
     case "Mozilla Public":
       // link
-      return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]";
+      return "![License](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)";
     case " ":
       return " ";
   }
@@ -64,14 +64,21 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  console.log("<<<<<<DATA>>>>", data);
+  console.log("data.license", data.license);
+  console.log("render license", renderLicenseBadge(data));
   return `# ${data.title}
   ## Purpose
 
   ${data.description}
+
   ## Licensing
 
   ${renderLicenseBadge(data.license)}
+  
   ${data.license}
+
+  ${renderLicenseLink(data.license)}
 
   ## Questions
 

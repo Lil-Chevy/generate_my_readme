@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
 const {
@@ -8,7 +8,7 @@ const {
 } = require("./utils/generateMarkdown");
 // const questions = [];
 
-// TODO: Create an array of questions for user input
+// array of questions for user input
 const questions = [
   {
     type: "input",
@@ -134,21 +134,12 @@ const questions = [
     default: false,
   },
 ];
-// .then((questionData) => {
-//   questions.push(questionData);
-//   console.log("Questions line 99", questions);
-//   if (questionPrompts.confirmContributors) {
-//     return questionPrompts(questionData);
-//   } else {
-//     return questionData;
-//   }
-// });
 
 //function to write README file
 function writeToFile(fileName) {
   return new Promise((resolve, reject) => {
     fs.writeFile("./utils/README.md", fileName, (err) => {
-      console.log("question array!", questions);
+      console.log("QUESTIONS ARRAY!", questions);
       if (err) {
         reject(err);
         return;
@@ -161,7 +152,7 @@ function writeToFile(fileName) {
   });
 }
 
-// TODO: Create a function to initialize app
+// function to initialize app
 function init() {
   return inquirer
     .prompt(questions)
@@ -171,7 +162,3 @@ function init() {
 
 // Function call to initialize app
 init();
-// module.exports = { writeToFile };
-
-// changed location of questions array
-//  changed init
