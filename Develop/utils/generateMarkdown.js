@@ -12,30 +12,16 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  switch (license) {
-    // "MIT",
-    case "MIT":
-      // link
-      return "https://opensource.org/licenses/MIT";
-    // "GNU GPLv3",
-    case "GNU GPLv3":
-      // link
-      return "https://opensource.org/licenses/GPL-3.0";
-    // "APACHE 2.0",
-    case "APACHE 2.0":
-      // link
-      return "https://opensource.org/licenses/Apache-2.0";
-    // "Boost Software",
-    case "Boost Software":
-      // link
-      return "https://opensource.org/licenses/BSL-1.0";
-    // "Mozilla Public",
-    case "Mozilla Public":
-      // link
-      return "https://opensource.org/licenses/MPL-2.0";
-
-    case " ":
-      return " ";
+  if (license == "MIT") {
+    return `https://opensource.org/licenses/MIT`;
+  } else if (license == "GNU GPLv3") {
+    return `https://opensource.org/licenses/GPL-3.0`;
+  } else if (license == "APACHE 2.0") {
+    return `https://opensource.org/licenses/Apache-2.0`;
+  } else if (license == "Boost Software") {
+    return `https://opensource.org/licenses/BSL-1.0`;
+  } else {
+    return `https://opensource.org/licenses/MPL-2.0`;
   }
 }
 
@@ -46,7 +32,12 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   console.log("<<<<<<DATA>>>>", data);
-  console.log("render license link", renderLicenseLink(data.license));
+  console.log("<<<<>>> LICESNE>>>><<<", data.license);
+  console.log(
+    "<<<<>>> renderLicenseLink>>>><<<",
+    renderLicenseLink(data.license)
+  );
+
   return `# ${data.title}
   ## Purpose
 
