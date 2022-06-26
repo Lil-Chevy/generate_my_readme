@@ -37,16 +37,30 @@ const questions = [
     },
   },
   {
-    type: "confirm",
-    name: "confirmInstallation",
-    message: "Do you have any instructions to include for installation",
-    default: true,
+    type: "input",
+    name: "installationInformation",
+    message: "Provide some information on how to install your app",
+    validate: (installationInformation) => {
+      if (installationInformation) {
+        return true;
+      } else {
+        console.log("Please enter installation information for your project!");
+        return false;
+      }
+    },
   },
   {
     type: "input",
-    name: "Installation",
-    message: "Provide some information on how to install your app",
-    when: ({ confirmInstallation }) => confirmInstallation,
+    name: "usageInformation",
+    message: "Please provide usage information on your app",
+    validate: (usageInformation) => {
+      if (usageInformation) {
+        return true;
+      } else {
+        console.log("Please enter usage information for your project!");
+        return false;
+      }
+    },
   },
   {
     type: "github",
@@ -103,7 +117,7 @@ const questions = [
   },
 
   {
-    type: "checkbox",
+    type: "list",
     name: "license",
     message: "What license would you like to add to the README file?",
     choices: [
@@ -126,12 +140,6 @@ const questions = [
         return false;
       }
     },
-  },
-  {
-    type: "confirm",
-    name: "confirmContributors",
-    message: "Would you like to enter another Contributor?",
-    default: false,
   },
 ];
 
