@@ -464,13 +464,9 @@ function renderLicenseSection(license) {
 //generate markdown for README
 function generateMarkdown(data) {
   console.log("<<<<<<DATA>>>>", data);
-  console.log("<<<<>>>License>>>><<<", data.license);
-  console.log(
-    "<<<<>>> renderLicenseLink>>>><<<",
-    renderLicenseLink(data.license)
-  );
 
-  return `# ${data.title}
+  return `
+  # ${data.title}
 
 
   ## Description
